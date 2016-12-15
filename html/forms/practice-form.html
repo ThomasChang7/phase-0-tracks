@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coffee Order</title>
+</head>
+<body>
+			<h1>
+				<strong>Coffee Order</strong>
+			</h1>
+		<form name="coffee" action="success.html" method="post">
+	<div>
+		<p>
+			<label>Name:</label>
+			<input type="text" name="customer_name">
+		</p>
+	</div>
+	<div>
+		<label>Roast:</label>
+		<label>
+		<input type="radio" name="roast" value ="blonde">
+		Blonde
+		</label>
+		<label>
+		<input type="radio" name="roast" value ="pike">
+		Pike
+		</label>
+		<label>
+		<input type="radio" name="roast" value ="dark">
+		Dark
+		</label>
+	</div>
+	<div>
+		<label>Syrups:</label>
+		<label>
+		<input type="checkbox" name="syrup" value ="Hazelnut">
+		Hazelnut
+		</label>
+		<label>
+		<input type="checkbox" name="syrup" value ="Pumpkin">
+		Pumpkin
+		</label>
+		<label>
+		<input type="checkbox" name="syrup" value ="Vanilla">
+		Vanilla
+		</label>
+	</div>
+	<div>
+		<label>Coffee Size</label>
+		<select name="size">
+			<option value="cup">Tall</option>
+			<option value="cup">Grandè</option>
+			<option value="cup">Ventí</option>
+		</select>
+	</div>
+	<div>
+		<textarea name="special_comments" placeholder="Enter additional instructions for the barista"></textarea>
+	</div>
+	<p>
+		<button>Submit Order</button>
+	</p>
+	</form>
+</body>
+</html>
