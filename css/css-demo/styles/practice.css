@@ -14,5 +14,10 @@ ul {
 }
 
 section:hover {
-	font-size: .8em;
+	font-size: .9em;
+}
+
+section > section {
+	border-style: solid;
+	border-color: black;
 }
