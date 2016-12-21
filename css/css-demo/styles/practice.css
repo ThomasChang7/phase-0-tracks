@@ -12,3 +12,7 @@
 ul {
 	font-size: .8em;
 }
+
+section:hover {
+	font-size: .8em;
+}
