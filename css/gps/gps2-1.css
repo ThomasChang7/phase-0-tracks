@@ -1,3 +1,33 @@
 body {
   background-color: pink;
 }
+
+header {
+  text-align: right;
+}
+
+footer {
+/**clear: both; **/
+}
+
+.column-1 {
+  float: left;
+  background-color: white;
+  width: 50%;
+  border: red dashed;
+  box-sizing: border-box;
+  color: green;
+}
+
+.column-2 {
+  float: right;
+  background-color: grey;
+  width: 50%;
+  font-family: "Comic Sans MS";
+  color: yellow;
+  border-radius: 10%;
+}
+
+.wrapper {
+  overflow: auto;
+}
