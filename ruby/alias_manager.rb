@@ -5,6 +5,10 @@
 
 
 def new_name(name)
+  if name.split(" ").length != 2
+    p "You did not input a valid name"
+    exit
+  end
   vowels = "aeiou".reverse
   consonants = "bcdfghjklmnpqrstvwxyz".reverse
   name_array = name.downcase.split(" ")
@@ -25,13 +29,17 @@ def new_name(name)
   first + " " +last
 end
 
-user_input = nil
+user_input = "John Doe"
+names = {}
 until user_input == "quit"
-  puts "Please enter a name"
+  puts "Please enter a name, type quit to view all names entered"
   user_input = gets.chomp
     if user_input == "quit"
-      puts "Exiting Program"
+      names.each do |k, v|
+      puts "#{v} is actually #{k}"
+      end
     else
       puts "The name is #{new_name(user_input)}"
+      names["#{user_input}"] = "#{new_name(user_input)}"
     end
 end
