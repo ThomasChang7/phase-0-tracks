@@ -1,0 +1,33 @@
+Data Structures
+1. Why are data structures useful in programming?
+Data structures allow the programmer to store and organize data in a computer to be used later on and to be used efficiently.
+
+Arrays
+2. Define "array" and describe the characteristics of an array.
+An array is a collection of any objects. This collection can be index through to find a specific element of an array.
+For example, fruits = [apple, banana, orange, pineapple] would be an array and fruits[1] would return banana.
+
+3. Give two original examples of data sets that an array might be well-suited for.
+One example of a data set that an array would be well suited for can be a collection of vowels. vowels = ["a","e","i","o","u"]
+Another example of a data set appropriate for an array may be types of cookies. cookies = ["chocolate chip", "raisin", "oatmeal"]
+
+Hashes
+4. Define "hash" and describe the characteristics of a hash.
+A hash has pairs of data, a key and a value pertaining to that key.
+hash = { "Jane Doe" => 10, "John Doe" => 6" }
+5. Give two original examples of data sets that a hash might be well-suited for.
+One example can be the rooms of a house. house = { first_floor: ["kitchen", living room], second_floor: "Under Construction"}
+Another example can be pets and their age. pets = {bruno: 10, spike: 3, garfield: 7, brian: 5 }
+Iteration
+6. Why is iteration useful?
+Iteration is useful because it allows the repetition of a task. Or it can be used on a block of code and instead of writing 26 times, the user can have it iterate over the block of code and specify when to end.
+7. Give an example of a real-life task that would require iteration if you wrote an algorithm for it.
+Play each song of a jukebox in a diner.
+Blocks
+8. What is a block?
+A block is code that functions as a small program within the code. It's syntax is different and can be done using { |x| puts x} or
+do |x|
+puts x
+end
+9. What is a block parameter, and where does its value come from?
+The block parameter's value depends on the method being called. So for example, [1,2,3,4,5].each { |x| x * 2}, the |x| is the block paramter and it's value depends on the item being looked upon in the array. The |x| will change through each iteration.
