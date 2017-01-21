@@ -79,8 +79,8 @@ class Guess
     elsif @answer.include?(@letter)
       @count -= 1
       @repeats << letter
-      letter_array = @answer.split("").each_index.select{ |i| @answer[i] == @letter }
-      letter_array.each do |idx|
+      idx = @answer.split("").each_index.select{ |i| @answer[i] == @letter }
+      idx_array.each do |idx|
         @feedback[idx] = @letter
       end
     else
