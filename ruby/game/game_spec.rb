@@ -9,7 +9,7 @@ describe Guess do
 
   it "tells the user how many guesses there are remaining" do
     guess.attempt("a")
-    expect(guess.count).to eq(4)
+    expect(guess.count).to eq(6)
   end
 
   it "guesses a letter and returns feedback to the user" do
@@ -29,7 +29,7 @@ describe Guess do
   it "does not increase count if a guess was repeated" do
     guess.attempt("a")
     guess.attempt("a")
-    expect(guess.count).to eq(4)
+    expect(guess.count).to eq(6)
   end
 
   it "shows the user a taunting message for losing" do
@@ -42,6 +42,8 @@ describe Guess do
     guess.attempt("c")
     guess.attempt("d")
     guess.attempt("e")
+    guess.attempt("f")
+    guess.attempt("g")
     expect(guess.switch).to eq(true)
   end
 
