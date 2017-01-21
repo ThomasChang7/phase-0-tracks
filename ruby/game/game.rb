@@ -60,6 +60,7 @@ class Guess
     @feedback = answer.split("").map!{ |char| char = "_"}.join
     @letter = nil
     @repeats = []
+    @switch = false
   end
 
   def current
@@ -74,18 +75,22 @@ class Guess
     @letter = letter
     if @repeats.include?(letter)
       return "You already guessed that letter!"
-    elsif @count == 0
-      return "You have no guesses left, run the final guess method"
     elsif @answer.include?(@letter)
       @count -= 1
       @repeats << letter
-      idx = @answer.split("").each_index.select{ |i| @answer[i] == @letter }
+      idx_array = @answer.split("").each_index.select{ |i| @answer[i] == @letter }
       idx_array.each do |idx|
         @feedback[idx] = @letter
+        if @count == 0
+          @switch = true
+        end
       end
     else
       @count -= 1
       @repeats << letter
+      if @count == 0
+        @switch = true
+      end
     end
     @feedback
   end
@@ -94,12 +99,36 @@ class Guess
     if @answer == word
       p "Congratulations! You win"
     else
-      p "You suck, you'll never know the answer"
+      p "You are a loser"
     end
     exit
   end
 
+  def switch
+    @switch
+  end
+
 end
+
+# Interface
+  puts "Let's play Guess"
+  puts "Can one player step up and input a word?"
+  answer = gets.chomp
+  play = Guess.new(answer)
+  system ('clear')
+  until play.switch == true
+    puts "Input a letter"
+    letter = gets.chomp
+    play.attempt(letter)
+    puts "You have #{play.count} guesses left"
+    puts "So far you have #{play.current}"
+    play.switch
+  end
+    puts "You have run out of attempts, please guess the final word"
+    guess = gets.chomp
+    play.final(guess)
+
+
 
 # Driver code
 # p guess = Guess.new("banana")
