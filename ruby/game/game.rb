@@ -56,7 +56,7 @@ class Guess
 
   def initialize(answer)
     @answer = answer
-    @count = 5
+    @count = answer.length + 1
     @feedback = answer.split("").map!{ |char| char = "_"}.join
     @letter = nil
     @repeats = []
@@ -102,22 +102,22 @@ class Guess
 end
 
 #   Interface
-  puts "Let's play Guess"
-  puts "Can one player step up and input a word?"
-  answer = gets.chomp
-  play = Guess.new(answer)
-  system ('clear')
-  until play.switch == true
-    puts "Input a letter"
-    letter = gets.chomp
-    play.attempt(letter)
-    puts "You have #{play.count} guesses left"
-    puts "So far you have #{play.feedback}"
-    play.switch
-  end
-    puts "You have run out of attempts, please guess the final word"
-    guess = gets.chomp
-    puts play.final(guess)
+  # puts "Let's play Guess"
+  # puts "Can one player step up and input a word?"
+  # answer = gets.chomp
+  # play = Guess.new(answer)
+  # system ('clear')
+  # until play.switch == true
+  #   puts "Input a letter"
+  #   letter = gets.chomp
+  #   play.attempt(letter)
+  #   puts "You have #{play.count} guesses left"
+  #   puts "So far you have #{play.feedback}"
+  #   play.switch
+  # end
+  #   puts "You have run out of attempts, please guess the final word"
+  #   guess = gets.chomp
+  #   puts play.final(guess)
 
 
 
