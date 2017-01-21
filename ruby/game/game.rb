@@ -51,8 +51,8 @@ message if they lose.
 =end
 
 class Guess
-  attr_accessor :count, :letter
-  attr_reader :answer
+
+  attr_reader :answer, :feedback, :count, :letter, :repeats
 
   def initialize(answer)
     @answer = answer
@@ -63,18 +63,10 @@ class Guess
     @switch = false
   end
 
-  def current
-    @feedback
-  end
-
-  def remaining
-    @count
-  end
-
   def attempt(letter)
     @letter = letter
     if @repeats.include?(letter)
-      return "You already guessed that letter!"
+      "You already guessed that letter!"
     elsif @answer.include?(@letter)
       @count -= 1
       @repeats << letter
@@ -97,11 +89,10 @@ class Guess
 
   def final(word)
     if @answer == word
-      p "Congratulations! You win"
+      "Congratulations! You win"
     else
-      p "You are a loser"
+      "You are a loser"
     end
-    exit
   end
 
   def switch
@@ -110,23 +101,23 @@ class Guess
 
 end
 
-# Interface
-  puts "Let's play Guess"
-  puts "Can one player step up and input a word?"
-  answer = gets.chomp
-  play = Guess.new(answer)
-  system ('clear')
-  until play.switch == true
-    puts "Input a letter"
-    letter = gets.chomp
-    play.attempt(letter)
-    puts "You have #{play.count} guesses left"
-    puts "So far you have #{play.current}"
-    play.switch
-  end
-    puts "You have run out of attempts, please guess the final word"
-    guess = gets.chomp
-    play.final(guess)
+#   Interface
+  # puts "Let's play Guess"
+  # puts "Can one player step up and input a word?"
+  # answer = gets.chomp
+  # play = Guess.new(answer)
+  # system ('clear')
+  # until play.switch == true
+  #   puts "Input a letter"
+  #   letter = gets.chomp
+  #   play.attempt(letter)
+  #   puts "You have #{play.count} guesses left"
+  #   puts "So far you have #{play.feedback}"
+  #   play.switch
+  # end
+  #   puts "You have run out of attempts, please guess the final word"
+  #   guess = gets.chomp
+  #   puts play.final(guess)
 
 
 
