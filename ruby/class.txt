@@ -1,0 +1,17 @@
+1. What are classes? Be sure to define the following terms in your explanation and describe the relationships between them:
+class - A class involves designing an object. They provide instructions on the characteristics and behaviors of an object.
+state - Characteristics, data of each instance, such as age, height, width, depth, weight
+behavior - known as methods
+instance variable - Each member belonging to a class is known as an instance
+instance method - Methods called on an instance of a class. For example, you cant call bark on a species, but you can call bark on a dog.
+2. What are attributes?
+A special variable used inside a class declaration. Each instance of a class may have different attributes, such as different colored hair, eyes, and skin.
+3. Give an example of a real world object, and describe how you might assign its attributes if you were to design a class to represent that object.
+Attributes I would assign a cat would be hair length, hair color, eye color, breed, size, temperament, etc.
+4. What is the purpose of the initialize method? When does it run?
+The purpose of the initialize method is to put some default value into all the instance variables.
+5. What are modules?
+A module is a way to organize and compartmentalize methods.
+6. What are the different ways you can use a module?
+Modules can be used as mixins meaning that they can be mixed into classes. For example, planes fly and birds fly so we can use a fly module to be included into
+both classes in order to avoid tedious typing when they both do the same thing.
