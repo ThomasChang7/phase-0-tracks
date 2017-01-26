@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Mike Bonetti].
+# We spent [2] hours on this challenge.
 
 # EXPLANATION OF require_relative
 # This will pull in data outside of this file from another file within the same directory.
@@ -41,7 +41,7 @@ class VirusPredictor
   def predicted_deaths
     # "Iowa" => {population_density: 54.81, population: 3074186}, 307418
     # "Illinois" => {population_density: 231.9, population: 12875255}, 5150102
-    # predicted deaths is solely based on population density
+    # # predicted deaths is solely based on population density
     # if @population_density >= 200
     #   number_of_deaths = (@population * 0.4).floor
     # elsif @population_density >= 150
@@ -58,26 +58,27 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
+
+  def speed
+    if @population_density >= 200
+      0.5
+    elsif @population_density >= 150
+      1
+    elsif @population_density >= 100
+      1.5
+    elsif @population_density >= 50
+      2
+    else
+      2.5
+    end
+  end
+
   #predicts spread speed based on pop density of the state
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
-
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
-    end
-
+    speed
     puts " and will spread across the state in #{speed} months.\n\n"
-
   end
 
 end
@@ -108,3 +109,16 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# On your own, add a commented reflection section to your my_solution.rb file. Answer the following questions in your reflection:
+#
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# One of the hashes uses symbols while the other one uses hash rockets.
+# What does require_relative do? How is it different from require?
+# Require relative will pull in another file in the same directory while require will load a file through the usage of a load path.
+# What are some ways to iterate through a hash?
+# Using each method, each_key, each_value
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# That they can be simplified by calling other methods. All of these instance variables can be used all within the class.
+# What concept did you most solidify in this challenge?
+# I solidified the concept of being DRY and not using unnecessary code. 
