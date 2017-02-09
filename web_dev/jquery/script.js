@@ -18,3 +18,5 @@ $(".shazam").click(function(){
 $(".mazahs").click(function(){
     $(".wrapper").show(200);
 });
+
+ 
