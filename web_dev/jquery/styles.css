@@ -1,0 +1,41 @@
+h1 {
+	font-family: Helvetica;
+	text-align: center;
+  letter-spacing: 5px;
+}
+
+h2 {
+	text-align: center;
+}
+
+button {
+	text-align: center;
+}
+
+.wrapper {
+	border: black solid 2px;
+}
+
+#what {
+	background-color: pink;
+}
+
+#where {
+	background-color: white;
+}
+
+#why {
+	background-color: pink;
+}
+
+#some {
+	background-color: white;
+}
+
+.odd:hover {
+	background-color: white;
+}
+
+.even:hover {
+	font-style: italic;
+}
