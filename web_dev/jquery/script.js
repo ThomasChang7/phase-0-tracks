@@ -1,4 +1,3 @@
-
 $("#navigation").mouseover(function(){
     $("#navigation").css("background-color", "beige");
 });
@@ -18,5 +17,3 @@ $(".shazam").click(function(){
 $(".mazahs").click(function(){
     $(".wrapper").show(200);
 });
-
- 
